@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Monochromatic Realism</title>
+    <style>
+        body { background-color: #7a5b5b; color: #faf6f6; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
+        .page-container { background-color: #ffffff; max-width: 1000px; width: 100%; padding: 60px 40px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); border: 1px solid #d0d0d0; box-sizing: border-box; }
+        .back-link { display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #888888; text-decoration: none; margin-bottom: 40px; }
+        .back-link:hover { color: #333333; }
+        .artist-photo-space { text-align: center; margin-bottom: 40px; }
+        .artist-photo-placeholder { display: inline-flex; align-items: center; justify-content: center; width: 140px; height: 140px; border-radius: 50%; overflow: hidden; }
+        .artist-photo-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .page-header { text-align: center; margin-bottom: 60px; }
+        .page-header h1 { font-size: 24px; font-weight: 300; letter-spacing: 3px; color: #111111; text-transform: uppercase; margin: 0 0 8px 0; }
+        .page-header .subtitle { font-size: 12px; letter-spacing: 4px; color: #555555; text-transform: uppercase; }
+        .content-section { max-width: 600px; margin: 0 auto; }
+        .content-section p { font-size: 15px; line-height: 1.9; color: #4a4a4a; text-align: justify; margin-bottom: 25px; }
+        .content-section h2 { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #333333; margin: 50px 0 18px; text-align: center; font-weight: 400; }
+        .content-section .pullquote { font-style: italic; color: #333333; text-align: center; font-size: 17px; margin: 40px 0; line-height: 1.6; }
+        .timeline { margin: 30px 0; }
+        .timeline-item { display: flex; gap: 20px; margin-bottom: 18px; align-items: baseline; }
+        .timeline-year { font-size: 12px; letter-spacing: 2px; color: #999999; min-width: 55px; text-align: right; text-transform: uppercase; }
+        .timeline-text { font-size: 14px; color: #555555; line-height: 1.6; }
+        .offerings-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 10px; }
+        .offering-item { border: 1px solid #e0e0e0; padding: 18px 16px; text-align: center; }
+        .offering-item h3 { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #333333; margin: 0 0 8px 0; font-weight: 400; }
+        .offering-item p { font-size: 13px; color: #666666; text-align: center; margin: 0; line-height: 1.6; }
+        .closing { padding-top: 35px; border-top: 1px solid #cccccc; margin-top: 50px; text-align: center; }
+        .closing p { font-size: 14px; line-height: 1.9; color: #555555; font-style: italic; }
+        .closing .signature { font-size: 13px; letter-spacing: 2px; color: #333333; text-transform: uppercase; margin-top: 20px; }
+        .logo-bottom .logo-placeholder { display: inline-flex; align-items: center; justify-content: center; width: 55px; height: 55px; }
+        .logo-placeholder img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .logo-bottom .studio-tagline { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #aaaaaa; margin-top: 6px; }
+        .footer { text-align: center; font-size: 10px; color: #888888; margin-top: 15px; letter-spacing: 1px; }
+        @media (max-width: 650px) { .page-container { padding: 30px 15px; } .offerings-grid { grid-template-columns: 1fr; } .page-header h1 { font-size: 20px; } .timeline-item { flex-direction: column; gap: 4px; } .timeline-year { text-align: left; } .artist-photo-placeholder { width: 110px; height: 110px; line-height: 110px; } }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <a href="home_page.html" class="back-link">← Back to Home</a>
+        <div class="artist-photo-space"><div class="artist-photo-placeholder"><img src="vision-lead.png" alt="Artist Portrait"></div>
+        <div class="page-header">
+            <h1>About the Artist</h1>
+            <p class="subtitle">The Hands Behind the Work</p>
+        </div>
+        <div class="content-section">
+            <p>I work in graphite and charcoal. I study faces. I chase the moment when a mark on paper stops being graphite and starts being someone you recognize — or someone you want to know.</p>
+            <p>My practice is built on a single conviction: that stripping away color reveals more than it hides.</p>
+            <p class="pullquote">"I don't draw faces. I draw what faces carry."</p>
+            <h2>The Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item"><span class="timeline-year">2015</span><span class="timeline-text">Began drawing seriously. Portraits became an obsession.</span></div>
+                <div class="timeline-item"><span class="timeline-year">2018</span><span class="timeline-text">Committed exclusively to monochrome.</span></div>
+                <div class="timeline-item"><span class="timeline-year">2021</span><span class="timeline-text">First commissioned series. Presence over likeness.</span></div>
+                <div class="timeline-item"><span class="timeline-year">2024</span><span class="timeline-text">Expanded into editions, AI integration, education.</span></div>
+                <div class="timeline-item"><span class="timeline-year">2026</span><span class="timeline-text">Full studio established. Doors open worldwide.</span></div>
+            </div>
+            <h2>What I Offer</h2>
+            <div class="offerings-grid">
+                <div class="offering-item"><h3>Original Works</h3><p>Graphite and charcoal pieces. Signed, dated, documented.</p></div>
+                <div class="offering-item"><h3>Commissions</h3><p>Custom portrait studies. Limited slots each year.</p></div>
+                <div class="offering-item"><h3>Art Decks</h3><p>Curated editions and card collections.</p></div>
+                <div class="offering-item"><h3>AI Integration</h3><p>Consulting at the intersection of draftsmanship and AI.</p></div>
+            </div>
+            <h2>The Philosophy</h2>
+            <p>Art should hold the wall. It should command a room without shouting. Monochrome is not a limitation — it's a discipline.</p>
+        </div>
+        <div class="closing">
+            <p>This is not just a portfolio. It's the beginning of a body of work that will outlive me.</p>
+            <p class="signature">— JOARMANAJ</p>
+        </div>
+        <div class="logo-bottom">
+            <div class="logo-placeholder"><img src="images.png" alt="Studio Mark"></div>
+            <div class="studio-tagline">JOARMANAJ</div>
+        </div>
+        <div class="footer">&copy; 2026 Studio &nbsp;&mdash;&nbsp; All Rights Reserved</div>
+    </div>
+</body>
+</html>

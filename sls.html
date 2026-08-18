@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study in Light & Shadow | Monochromatic Realism</title>
+    <style>
+        body { background-color: #7a5b5b; color: #faf6f6; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
+        .page-container { background-color: #ffffff; max-width: 1000px; width: 100%; padding: 60px 40px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); border: 1px solid #d0d0d0; box-sizing: border-box; }
+        
+        .logo-top { text-align: center; margin-bottom: 8px; }
+        .logo-placeholder {  display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 70px; }
+        .logo-placeholder img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .logo-top .studio-tagline { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #aaaaaa; margin-top: 4px; margin-bottom: 30px; }
+
+        /* TOP LINKS ROW */
+        .top-links { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .top-links a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #888888; text-decoration: none; transition: color 0.3s ease; }
+        .top-links a:hover { color: #333333; }
+
+        .artwork-display { text-align: center; margin-bottom: 50px; }
+        .art-frame { background-color: #e8e8e8; padding: 12px; border: 1px solid #bbbbbb; max-width: 450px; margin: 0 auto 20px; box-sizing: border-box; }
+        .art-frame img { width: 100%; height: auto; display: block; filter: grayscale(100%); }
+        .artwork-title { font-size: 20px; font-weight: 300; letter-spacing: 2px; color: #111111; margin: 0 0 5px 0; font-style: italic; }
+        .artwork-number { font-size: 11px; letter-spacing: 3px; color: #888888; text-transform: uppercase; display: block; margin-bottom: 30px; }
+        .description-section { border-top: 1px solid #cccccc; padding-top: 30px; max-width: 500px; margin: 0 auto; text-align: center; }
+        .description-section h2 { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #333333; margin-bottom: 20px; }
+        .description-section p { font-size: 15px; line-height: 1.8; color: #4a4a4a; text-align: justify; margin-bottom: 20px; }
+        .description-section .medium { font-size: 13px; color: #777777; font-style: italic; }
+        .purchase-btn { display: inline-block; margin-top: 25px; padding: 12px 30px; background-color: #25D366; color: #ffffff; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; transition: background-color 0.3s ease; }
+        .purchase-btn:hover { background-color: #1da851; }
+        .nav-links { display: flex; justify-content: space-between; align-items: center; max-width: 500px; margin: 40px auto 0; padding-top: 25px; border-top: 1px solid #cccccc; }
+        .nav-links a { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #888888; text-decoration: none; }
+        .nav-links a:hover { color: #333333; }
+        .footer { text-align: center; font-size: 10px; color: #888888; margin-top: 40px; letter-spacing: 1px; }
+        @media (max-width: 600px) { .page-container { padding: 30px 15px; } .art-frame { max-width: 100%; } .artwork-title { font-size: 18px; } .nav-links { flex-direction: column; gap: 15px; } .top-links { flex-direction: column; gap: 10px; text-align: center; } }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+
+        <div class="logo-top">
+            <div class="logo-placeholder"><img src="vision-lead.png" alt="VISION & LEAD — Studio Mark"></div>
+            <div class="studio-tagline">JOARMANAJ</div>
+        </div>
+
+        <div class="top-links">
+            <a href="gallery.html">← Back to Gallery</a>
+            <a href="home_page.html">Back to Home →</a>
+        </div>
+
+        <div class="artwork-display">
+            <div class="art-frame"><img src="my_first.jpg" alt="Study in Light and Shadow"></div>
+            <h1 class="artwork-title">Study in Light &amp; Shadow</h1>
+            <span class="artwork-number">Study I of V</span>
+        </div>
+
+        <div class="description-section">
+            <h2>About This Work</h2>
+            <p>An exploration of dramatic chiaroscuro, where light carves the face from darkness. This study examines the threshold between visibility and concealment, revealing how shadow defines form as much as illumination.</p>
+            <div class="medium">Medium: Graphite on Paper</div>
+            <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hello%2C%20I'm%20interested%20in%20purchasing%20'Study%20in%20Light%20%26%20Shadow'%20(Study%20I%20of%20V).%20Is%20this%20piece%20available%3F" class="purchase-btn" target="_blank">Purchase Inquiry</a>
+        </div>
+
+        <div class="nav-links">
+            <span style="visibility: hidden;">← Previous</span>
+            <a href="gallery.html">All Works</a>
+            <a href="rs.html">Next →</a>
+        </div>
+
+        <div class="footer">&copy; 2026 Studio &nbsp;&mdash;&nbsp; All Rights Reserved</div>
+    </div>
+</body>
+
+<script src="artworks.js"></script>
+<script>
+    const slug = window.location.pathname.split('/').pop().replace('.html', '');
+    const art = artworks.find(a => a.slug === slug);
+
+    if (art) {
+        document.title = art.title + ' | Monochromatic Realism';
+
+        const img = document.querySelector('.art-frame img');
+        img.src = art.image;
+        img.alt = art.title;
+        img.loading = 'lazy';
+
+        document.querySelector('.artwork-title').textContent = art.title;
+        document.querySelector('.artwork-number').textContent = art.num;
+        document.querySelector('.description-section p').textContent = art.description;
+        document.querySelector('.description-section .medium').textContent = 'Medium: ' + art.medium;
+
+        const phone = 'YOUR_PHONE_NUMBER';
+        const msg = `Hello, I'm interested in purchasing '${art.title}' (${art.num}). Is this piece available?`;
+        const btn = document.querySelector('.purchase-btn');
+        if (btn) btn.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    }
+</script>
+</html>

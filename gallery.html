@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Monochromatic Realism</title>
+    <style>
+        body { background-color: #7a5b5b; color: #faf6f6; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
+        .page-container { background-color: #ffffff; max-width: 1000px; width: 100%; padding: 60px 40px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); border: 1px solid #d0d0d0; box-sizing: border-box; }
+        .back-link { display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #888888; text-decoration: none; margin-bottom: 40px; }
+        .back-link:hover { color: #333333; }
+        .header { text-align: center; margin-bottom: 50px; border-bottom: 1px solid #cccccc; padding-bottom: 30px; }
+        .header h1 { font-size: 26px; font-weight: 300; letter-spacing: 3px; color: #111111; text-transform: uppercase; margin: 0 0 10px 0; }
+        .header p { font-size: 12px; letter-spacing: 4px; color: #555555; text-transform: uppercase; }
+        .gallery { display: flex; flex-direction: column; align-items: center; gap: 40px; margin-bottom: 50px; }
+        .art-card { max-width: 400px; width: 100%; text-align: center; text-decoration: none; display: block; cursor: pointer; }
+        .art-card:hover .art-frame { border-color: #999999; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .art-card:hover .art-title { color: #111111; }
+        .art-frame { background-color: #e8e8e8; padding: 12px; border: 1px solid #bbbbbb; width: 100%; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+        .art-frame img { width: 100%; height: auto; display: block; filter: grayscale(100%); }
+        .art-title { font-size: 13px; font-style: italic; color: #444444; margin-top: 10px; letter-spacing: 1px; transition: color 0.3s ease; }
+        .logo-bottom { text-align: center; margin-top: 50px; padding-top: 35px; border-top: 1px solid #cccccc; }
+        .logo-placeholder {display: inline-flex; align-items: center; justify-content: center; width: 55px; height: 55px;   }
+        .logo-placeholder img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .logo-bottom .studio-tagline { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #aaaaaa; margin-top: 6px; }
+        .footer { text-align: center; font-size: 10px; color: #888888; margin-top: 15px; letter-spacing: 1px; }
+        @media (max-width: 600px) { .page-container { padding: 30px 15px; } .header h1 { font-size: 20px; } .art-card { max-width: 100%; } }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <a href="home_page.html" class="back-link">← Back to Home</a>
+        <div class="header">
+            <h1>Monochromatic Realism</h1>
+            <p>Five-Piece Series</p>
+        </div>
+        <div class="gallery">
+            <a href="sls.html" class="art-card"><div class="art-frame"><img src="my_first.jpg" alt="Study in Light and Shadow"></div><div class="art-title">Study in Light &amp; Shadow</div></a>
+            <a href="rs.html" class="art-card"><div class="art-frame"><img src="my_second.jpg" alt="Refined Structure"></div><div class="art-title">Refined Structure</div></a>
+            <a href="es.html" class="art-card"><div class="art-frame"><img src="my_third.jpg" alt="Expressive Study"></div><div class="art-title">Expressive Study</div></a>
+            <a href="be.html" class="art-card"><div class="art-frame"><img src="my_fourth.jpg" alt="Beyond Expectation"></div><div class="art-title">Beyond Expectation</div></a>
+            <a href="ls.html" class="art-card"><div class="art-frame"><img src="my_fifth.jpg" alt="Love and Sacrifice"></div><div class="art-title">Love &amp; Sacrifice</div></a>
+        </div>
+        <div class="logo-bottom">
+            <div class= "logo-placeholder"><img src="vision-lead.png" alt="Studio Mark"></div>
+            <div class="studio-tagline">JOARMANAJ</div>
+        </div>
+        <div class="footer">&copy; 2026 Studio &nbsp;&mdash;&nbsp; All Rights Reserved</div>
+    </div>
+</body>
+</html>

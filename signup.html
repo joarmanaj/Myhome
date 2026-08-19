@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the List | Monochromatic Realism</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body { background-color: #7a5b5b; color: #faf6f6; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
+        .page-container { background-color: #ffffff; max-width: 700px; width: 100%; padding: 60px 50px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); border: 1px solid #d0d0d0; box-sizing: border-box; text-align: center; }
+
+        .logo-top { text-align: center; margin-bottom: 8px; }
+        .logo-placeholder { display: inline-flex; align-items: center; justify-content: center; width: 90px; height: 90px; }
+        .logo-placeholder img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .logo-top .studio-tagline { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #aaaaaa; margin-top: 4px; margin-bottom: 40px; }
+
+        .top-links { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .top-links a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #888888; text-decoration: none; transition: color 0.3s ease; }
+        .top-links a:hover { color: #333333; }
+
+        .page-header { margin-bottom: 50px; }
+        .page-header h1 { font-size: 22px; font-weight: 300; letter-spacing: 3px; color: #111111; text-transform: uppercase; margin: 0 0 10px 0; }
+        .page-header .subtitle { font-size: 12px; letter-spacing: 4px; color: #555555; text-transform: uppercase; }
+
+        .signup-intro { font-size: 13px; line-height: 1.9; color: #666666; max-width: 400px; margin: 0 auto 40px; }
+        .signup-intro .divider { width: 30px; height: 1px; background: #cccccc; margin: 25px auto; }
+
+        .signup-form { max-width: 400px; margin: 0 auto; text-align: left; }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #555555; margin-bottom: 8px; }
+        .form-group input, .form-group select { width: 100%; padding: 12px 14px; font-size: 14px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; border: 1px solid #cccccc; background-color: #fafafa; box-sizing: border-box; transition: border-color 0.3s ease; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #999999; background-color: #ffffff; }
+        .form-group .error-message { display: none; font-size: 11px; color: #c0392b; margin-top: 5px; letter-spacing: 0.5px; }
+
+        .submit-btn { display: inline-block; width: 100%; padding: 14px; background-color: #111111; color: #ffffff; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; border: none; cursor: pointer; transition: background-color 0.3s ease; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        .submit-btn:hover { background-color: #333333; }
+        .submit-btn:disabled { background-color: #999999; cursor: not-allowed; }
+
+        .form-status { display: none; font-size: 12px; letter-spacing: 1px; margin-top: 15px; padding: 12px; text-align: center; }
+        .form-status.success { display: block; background-color: #f0f7f0; color: #2e7d32; border: 1px solid #c8e6c9; }
+        .form-status.error { display: block; background-color: #fdf0ef; color: #c0392b; border: 1px solid #f5c6c3; }
+
+        .privacy-note { font-size: 10px; color: #999999; text-align: center; margin-top: 20px; letter-spacing: 1px; }
+
+        .logo-bottom { text-align: center; margin-top: 50px; padding-top: 35px; }
+        .logo-bottom img { width: 60px; height: 60px; object-fit: contain; }
+        .logo-bottom .studio-tagline { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #aaaaaa; margin-top: 4px; }
+
+        .footer { text-align: center; font-size: 10px; color: #888888; margin-top: 15px; letter-spacing: 1px; }
+
+        @media (max-width: 600px) {
+            .page-container { padding: 40px 20px; }
+            .page-header h1 { font-size: 18px; }
+            .top-links { flex-direction: column; gap: 10px; }
+            .logo-placeholder { width: 70px; height: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+
+        <div class="logo-top">
+            <div class="logo-placeholder"><img src="vision-lead.png" alt="VISION & LEAD — Studio Mark"></div>
+            <div class="studio-tagline">The Studio</div>
+        </div>
+
+        <div class="top-links">
+            <span></span>
+            <a href="home_page.html">Back to Home →</a>
+        </div>
+
+        <div class="page-header">
+            <h1>Join the List</h1>
+            <p class="subtitle">Be First to See New Works</p>
+        </div>
+
+        <div class="signup-intro">
+            <p>New pieces sell quickly. New collections are announced quietly. If you want to be among the first to know, leave your details below.</p>
+            <div class="divider"></div>
+            <p>No noise. No spam. Only art.</p>
+        </div>
+
+        <form class="signup-form" id="signup-form" method="POST" data-netlify="true" name="signup" action="/thank-you.html" novalidate>
+            <input type="hidden" name="form-name" value="signup">
+
+            <input type="text" name="website" id="website" style="display:none;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Full name" maxlength="100" required>
+                <span class="error-message" id="name-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" maxlength="150" required>
+                <span class="error-message" id="email-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="interest">I Am Interested In</label>
+                <select id="interest" name="interest" required>
+                    <option value="" disabled selected>Select one</option>
+                    <option value="Collector">Collecting Original Works</option>
+                    <option value="Commission">Commissioning a Piece</option>
+                    <option value="Art Decks">Art Decks & Editions</option>
+                    <option value="AI Services">AI Consultation</option>
+                    <option value="General">General Updates</option>
+                </select>
+                <span class="error-message" id="interest-error"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="RECAPTCHA_SITE_KEY_PLACEHOLDER"></div>
+                <span class="error-message" id="captcha-error"></span>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submit-btn">Subscribe</button>
+        </form>
+
+        <div class="form-status" id="form-status"></div>
+
+        <p class="privacy-note">Your details are never shared. Unsubscribe anytime.</p>
+
+        <div class="logo-bottom">
+            <img src="vision-lead.png" alt="VISION & LEAD — Studio Mark">
+            <div class="studio-tagline">The Studio</div>
+        </div>
+
+        <div class="footer">&copy; 2026 Studio &nbsp;&mdash;&nbsp; All Rights Reserved</div>
+
+    </div>
+
+    <script>
+        const RECAPTCHA_SITE_KEY = 'RECAPTCHA_SITE_KEY_PLACEHOLDER';
+        document.querySelector('.g-recaptcha').setAttribute('data-sitekey', RECAPTCHA_SITE_KEY);
+    </script>
+    <script src="signup.js"></script>
+</body>
+</html>

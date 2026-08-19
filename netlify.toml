@@ -1,0 +1,10 @@
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/signup"
+  to = "/.netlify/functions/signup-guard"
+  status = 200

@@ -155,7 +155,7 @@
 
         const formData = new FormData(form);
 
-        fetch('/api/signup', {
+        fetch('https://signup-backend-hs67.onrender.com/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

@@ -7,7 +7,7 @@
 
     // Environment variables injected by Netlify at build time
     const WHATSAPP_NUMBER = window.WHATSAPP_NUMBER || 'YOUR_WHATSAPP_NUMBER_PLACEHOLDER';
-    const RECAPTCHA_SITE_KEY ='6LcLz44tAAAAAJH55hQB_jn7YXIvsidfKBJCuclt';
+    const RECAPTCHA_SITE_KEY ='';
 
     // Set reCAPTCHA site key if available
     const recaptchaWidget = document.getElementById('recaptcha-widget');

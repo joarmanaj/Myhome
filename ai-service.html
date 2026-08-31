@@ -3,63 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Service | Monochromatic Realism</title>
+    <title>AI / TECH | Monochromatic Realism</title>
     <style>
         body { background-color: #7a5b5b; color: #faf6f6; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
         .page-container { background-color: #ffffff; max-width: 1000px; width: 100%; padding: 60px 40px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); border: 1px solid #d0d0d0; box-sizing: border-box; }
+
+        .logo-top { text-align: center; margin-bottom: 8px; }
+        .logo-placeholder { display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 70px; }
+        .logo-placeholder img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .logo-top .studio-tagline { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #aaaaaa; margin-top: 4px; margin-bottom: 30px; }
+
         .back-link { display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #888888; text-decoration: none; margin-bottom: 40px; }
         .back-link:hover { color: #333333; }
-        .page-header { text-align: center; margin-bottom: 60px; }
+
+        .page-header { text-align: center; margin-bottom: 50px; }
         .page-header h1 { font-size: 24px; font-weight: 300; letter-spacing: 3px; color: #111111; text-transform: uppercase; margin: 0 0 8px 0; }
         .page-header .subtitle { font-size: 12px; letter-spacing: 4px; color: #555555; text-transform: uppercase; }
-        .content-section { max-width: 600px; margin: 0 auto; text-align: center; }
-        .content-section p { font-size: 15px; line-height: 1.9; color: #4a4a4a; text-align: justify; margin-bottom: 25px; }
-        .content-section h2 { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #333333; margin: 50px 0 18px; font-weight: 400; }
-        .content-section h2::after { content: ""; display: block; width: 30px; height: 1px; background: #cccccc; margin: 12px auto 0; }
-        .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 10px; }
-        .service-item { border: 1px solid #e0e0e0; padding: 20px 16px; text-align: center; }
-        .service-item h3 { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #333333; margin: 0 0 8px 0; font-weight: 400; }
-        .service-item p { font-size: 13px; color: #666666; text-align: center; margin: 0; line-height: 1.6; }
-        
-        /* CTA BUTTON */
-        .cta-section { margin-top: 40px; }
-        .cta-btn { display: inline-block; padding: 14px 35px; background-color: #25D366; color: #ffffff; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; transition: background-color 0.3s ease; }
-        .cta-btn:hover { background-color: #1da851; }
 
-        .logo-bottom { text-align: center; margin-top: 50px; padding-top: 35px; border-top: 1px solid #cccccc; }
-        .logo-placeholder { display: inline-block; width: 55px; height: 55px; border: 1px dashed #cccccc; background-color: #fafafa; font-size: 7px; letter-spacing: 2px; text-transform: uppercase; color: #bbbbbb; line-height: 55px; }
-        .logo-placeholder img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .content-section { max-width: 600px; margin: 0 auto; text-align: center; }
+        .content-section p { font-size: 15px; line-height: 1.9; color: #4a4a4a; margin-bottom: 25px; text-align: justify; }
+
+        .enquiry-btn { display: inline-block; margin-top: 35px; padding: 14px 35px; background-color: #25D366; color: #ffffff; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; transition: background-color 0.3s ease; cursor: pointer; border: none; }
+        .enquiry-btn:hover { background-color: #1da851; }
+
+        .logo-bottom { text-align: center; margin-top: 50px; padding-top: 35px; }
+        .logo-bottom img { width: 55px; height: 55px; object-fit: contain; }
         .logo-bottom .studio-tagline { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #aaaaaa; margin-top: 6px; }
+
         .footer { text-align: center; font-size: 10px; color: #888888; margin-top: 15px; letter-spacing: 1px; }
-        @media (max-width: 650px) { .page-container { padding: 30px 15px; } .page-header h1 { font-size: 20px; } .service-grid { grid-template-columns: 1fr; } }
+
+        /* MODAL */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-overlay.active { display: flex; }
+        .modal-box { background-color: #ffffff; max-width: 400px; width: 90%; padding: 40px 30px; text-align: center; position: relative; }
+        .modal-close { position: absolute; top: 15px; right: 20px; font-size: 20px; cursor: pointer; color: #888888; background: none; border: none; }
+        .modal-close:hover { color: #111111; }
+        .modal-box h3 { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: #111111; margin-bottom: 25px; font-weight: 400; }
+        .modal-options { display: flex; flex-direction: column; gap: 12px; }
+        .modal-option { display: block; width: 100%; padding: 13px 15px; border: 1px solid #cccccc; background: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #444444; cursor: pointer; transition: all 0.3s ease; }
+        .modal-option:hover { background-color: #111111; color: #ffffff; border-color: #111111; }
+
+        @media (max-width: 650px) {
+            .page-container { padding: 30px 15px; }
+            .page-header h1 { font-size: 20px; }
+            .logo-placeholder { width: 60px; height: 60px; }
+        }
     </style>
 </head>
 <body>
     <div class="page-container">
+
+        <div class="logo-top">
+            <div class="logo-placeholder"><img src="vision-lead.png" alt="VISION & LEAD — Studio Mark"></div>
+            <div class="studio-tagline">JOARMANAJ</div>
+        </div>
+
         <a href="home_page.html" class="back-link">← Back to Home</a>
+
         <div class="page-header">
-            <h1>AI Service</h1>
-            <p class="subtitle">Where Draftsmanship Meets Intelligence</p>
+            <h1>AI / TECH</h1>
+            <p class="subtitle">Software &amp; Intelligent Systems</p>
         </div>
+
         <div class="content-section">
-            <p>Artificial intelligence is reshaping how art is made, seen, and valued. I sit at the intersection of traditional draftsmanship and AI tools — not replacing the hand, but extending what's possible.</p>
-            <p>This is for artists who want to integrate AI without losing their voice. For collectors who want to understand what AI-generated art means for value and authenticity. For anyone curious about where this is going.</p>
-            <h2>What I Offer</h2>
-            <div class="service-grid">
-                <div class="service-item"><h3>Artist Consultations</h3><p>One-on-one sessions on integrating AI into your traditional practice without compromising your style.</p></div>
-                <div class="service-item"><h3>Collector Guidance</h3><p>Understanding AI art: provenance, value, and what to look for in this new landscape.</p></div>
-                <div class="service-item"><h3>Workshops</h3><p>Small group sessions on AI tools for working artists. Practical, hands-on, no hype.</p></div>
-                <div class="service-item"><h3>Custom Tools</h3><p>Bespoke AI workflows built around your specific medium and process.</p></div>
-            </div>
-            <div class="cta-section">
-                <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hello%2C%20I'd%20like%20to%20book%20an%20AI%20consultation.%20Please%20let%20me%20know%20available%20dates." class="cta-btn" target="_blank">Book a Consultation</a>
-            </div>
+            <p>Beyond the canvas, I build for others. AI / TECH is where I design software and intelligent systems — for clients, collectors, and anyone building something that needs to work.</p>
+            <p>Separate from the hand. This is where problems get solved.</p>
+
+            <button class="enquiry-btn" id="open-modal">Make an Enquiry</button>
         </div>
+
         <div class="logo-bottom">
-            <div class="logo-placeholder">LOGO</div>
-            <div class="studio-tagline">The Studio</div>
+            <img src="vision-lead.png" alt="Studio Mark">
+            <div class="studio-tagline">JOARMANAJ</div>
         </div>
         <div class="footer">&copy; 2026 Studio &nbsp;&mdash;&nbsp; All Rights Reserved</div>
+
     </div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-box">
+            <button class="modal-close" id="close-modal">&times;</button>
+            <h3>What do you need?</h3>
+            <div class="modal-options">
+                <button class="modal-option" data-option="Software Tools">Software Tools</button>
+                <button class="modal-option" data-option="Intelligent Systems">Intelligent Systems</button>
+                <button class="modal-option" data-option="Automation">Automation</button>
+                <button class="modal-option" data-option="Strategy">Strategy</button>
+                <button class="modal-option" data-option="Something Else">Something Else</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script>
+        const modalOverlay = document.getElementById('modal-overlay');
+        const openBtn = document.getElementById('open-modal');
+        const closeBtn = document.getElementById('close-modal');
+
+        openBtn.addEventListener('click', () => {
+            modalOverlay.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modalOverlay.classList.remove('active');
+        });
+
+        modalOverlay.addEventListener('click', function(e) {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove('active');
+            }
+        });
+
+        document.querySelectorAll('.modal-option').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const option = this.getAttribute('data-option');
+                const msg = encodeURIComponent(`Hello, I'm interested in AI / TECH.\n\nI'd like to discuss: ${option}\n\nMy name is ____`);
+                window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
+                modalOverlay.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

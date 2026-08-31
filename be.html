@@ -55,7 +55,7 @@
             <h2>About This Work</h2>
             <p>What lies past the familiar — a face emerging from restraint into revelation. This study examines the threshold where recognition dissolves into something deeper, something unnameable.</p>
             <div class="medium">Medium: Graphite on Paper</div>
-            <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hello%2C%20I'm%20interested%20in%20purchasing%20'Beyond%20Expectation'%20(Study%20IV%20of%20V).%20Is%20this%20piece%20available%3F" class="purchase-btn" target="_blank">Purchase Inquiry</a>
+            <a href="#" class="purchase-btn" target="_blank">Purchase Inquiry</a>
         </div>
 
         <div class="nav-links">
@@ -68,7 +68,8 @@
     </div>
 </body>
 
-<script src="artworks.js"></script>
+<script src="config.js"></script>
+<script src="artwork.js"></script>
 <script>
     const slug = window.location.pathname.split('/').pop().replace('.html', '');
     const art = artworks.find(a => a.slug === slug);
@@ -86,10 +87,10 @@
         document.querySelector('.description-section p').textContent = art.description;
         document.querySelector('.description-section .medium').textContent = 'Medium: ' + art.medium;
 
-        const phone = 'YOUR_PHONE_NUMBER';
+        
         const msg = `Hello, I'm interested in purchasing '${art.title}' (${art.num}). Is this piece available?`;
         const btn = document.querySelector('.purchase-btn');
-        if (btn) btn.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+        if (btn) btn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
     }
 </script>
 </html>

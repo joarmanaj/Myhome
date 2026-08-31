@@ -59,7 +59,12 @@
             <h2>About This Work</h2>
             <p>An exploration of dramatic chiaroscuro, where light carves the face from darkness. This study examines the threshold between visibility and concealment, revealing how shadow defines form as much as illumination.</p>
             <div class="medium">Medium: Graphite on Paper</div>
-            <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hello%2C%20I'm%20interested%20in%20purchasing%20'Study%20in%20Light%20%26%20Shadow'%20(Study%20I%20of%20V).%20Is%20this%20piece%20available%3F" class="purchase-btn" target="_blank">Purchase Inquiry</a>
+            <a href="#" class="purchase-btn" target="_blank">Purchase Inquiry</a>
+            <script src="config.js"></script>
+            <script>
+                const msg = encodeURIComponent("Hello I'm interested in purchasing 'Study in Light & Shadow' (Study I of V). Is this piece available?");
+                document.querySelector('.purchase-btn').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+            </script>
         </div>
 
         <div class="nav-links">
@@ -72,7 +77,7 @@
     </div>
 </body>
 
-<script src="artworks.js"></script>
+<script src="artwork.js"></script>
 <script>
     const slug = window.location.pathname.split('/').pop().replace('.html', '');
     const art = artworks.find(a => a.slug === slug);
@@ -88,7 +93,7 @@
         document.querySelector('.artwork-title').textContent = art.title;
         document.querySelector('.artwork-number').textContent = art.num;
         document.querySelector('.description-section p').textContent = art.description;
-        document.querySelector('.description-section .medium').textContent = 'Medium: ' + art.medium;
+        document.querySelector('.description-section .medium').textContent = 'Medium: ' + art.mediu
 
         const phone = 'YOUR_PHONE_NUMBER';
         const msg = `Hello, I'm interested in purchasing '${art.title}' (${art.num}). Is this piece available?`;

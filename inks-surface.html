@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Monochromatic Realism</title>
+    <style>
+        body { background-color: #7a5b5b; color: #faf6f6; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
+        .page-container { background-color: #ffffff; max-width: 1000px; width: 100%; padding: 60px 40px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); border: 1px solid #d0d0d0; box-sizing: border-box; }
+        .back-link { display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #888888; text-decoration: none; margin-bottom: 40px; }
+        .back-link:hover { color: #333333; }
+        .header { text-align: center; margin-bottom: 50px; border-bottom: 1px solid #cccccc; padding-bottom: 30px; }
+        .header h1 { font-size: 26px; font-weight: 300; letter-spacing: 3px; color: #111111; text-transform: uppercase; margin: 0 0 10px 0; }
+        .header p { font-size: 12px; letter-spacing: 4px; color: #555555; text-transform: uppercase; }
+        .statement-top { max-width: 600px; margin: 0 auto 50px; text-align: center; }
+        .statement-top p { font-size: 15px; line-height: 1.9; color: #4a4a4a; text-align: justify; font-style: italic; }
+        .gallery { display: flex; flex-direction: column; align-items: center; gap: 40px; margin-bottom: 50px; }
+        .art-card { max-width: 400px; width: 100%; text-align: center; text-decoration: none; display: block; cursor: pointer; }
+        .art-card:hover .art-frame { border-color: #999999; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .art-card:hover .art-title { color: #111111; }
+        .join-section { text-align: center; margin-top: 50px; padding-top: 40px; }
+        .join-line { width: 50px; height: 1px; background: #cccccc; margin: 20px auto; }
+        .join-section h2 { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #333333; margin-bottom: 10px; font-weight: 400; }
+        .join-section p { font-size: 13px; color: #666666; margin-bottom: 20px; font-style: italic; }
+        .join-box { background-color: #9a7b7b; border: 1px solid #9a7b7b; max-width: 350px; margin: 25px auto 0; padding: 25px 20px; }
+        .join-box p { color: #faf6f6; font-size: 13px; margin-bottom: 18px; font-style: normal; }
+        .join-btn { display: inline-block; padding: 12px 35px; border: 1px solid #ffffff; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #ffffff; text-decoration: none; transition: all 0.3s ease; background: none; }
+        .join-btn:hover { background-color: #ffffff; color: #111111; border-color: #ffffff; }
+        .art-frame { background-color: #e8e8e8; padding: 12px; border: 1px solid #bbbbbb; width: 100%; box-sizing: border-box; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+        .art-frame img { width: 100%; height: auto; display: block; }
+        .art-title { font-size: 13px; font-style: italic; color: #444444; margin-top: 10px; letter-spacing: 1px; transition: color 0.3s ease; }
+        .logo-bottom { text-align: center; margin-top: 50px; padding-top: 35px; border-top: 1px solid #cccccc; }
+        .logo-placeholder {display: inline-flex; align-items: center; justify-content: center; width: 55px; height: 55px;   }
+        .logo-placeholder img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .logo-bottom .studio-tagline { font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: #aaaaaa; margin-top: 6px; }
+        .footer { text-align: center; font-size: 10px; color: #888888; margin-top: 15px; letter-spacing: 1px; }
+        @media (max-width: 600px) { .page-container { padding: 30px 15px; } .header h1 { font-size: 20px; } .art-card { max-width: 100%; } }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <a href="home_page.html" class="back-link">← Back to Home</a>
+        <div class="header">
+            <h1>INKS & SURFACES</h1>
+            <p>piece series</p>
+        </div>
+        <div class="statement-top">
+            <p>Where graphite ends and ink begins. A body of work exploring texture, surface, and the physicality of mark-making — paper as skin, surface as story. Each piece is a study in raw material and living form.</p>
+        </div>
+        <div class="gallery" id="inks-gallery"></div>
+        <div class="join-section">
+            <div class="join-line"></div>
+            <h2>Join the List</h2>
+            <p>New art works, first look and more.</p>
+            <div class="join-box">
+                <p>Be first to see new works when they are released.</p>
+                <a href="signup.html" class="join-btn">Subscribe</a>
+            </div>
+            <div class="join-line"></div>
+        </div>
+        <div class="logo-bottom">
+            <div class= "logo-placeholder"><img src="vision-lead.png" alt="Studio Mark"></div>
+            <div class="studio-tagline">JOARMANAJ</div>
+        </div>
+        <div class="footer">&copy; 2026 Studio &nbsp;&mdash;&nbsp; All Rights Reserved</div>
+    </div>
+    <script src="config.js"></script>
+    <script src="inks-artwork.js"></script>
+    <script>
+        const grid = document.getElementById('inks-gallery');
+        inksArtworks.forEach(artwork => {
+            const Card = document.createElement('a');
+            Card.className = 'art-card';
+            Card.href = artwork.slug + '.html';
+            Card.innerHTML = `
+                <div class="art-frame">
+                    <img src="${artwork.image}" alt="${artwork.title}">
+                </div>
+                <div class="art-title">${artwork.title}</div>
+            `;
+
+            grid.appendChild(Card);
+        });
+    </script>
+</body>
+</html>

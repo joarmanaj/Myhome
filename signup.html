@@ -48,6 +48,19 @@
 
         .footer { text-align: center; font-size: 10px; color: #888888; margin-top: 15px; letter-spacing: 1px; }
 
+        /* SUCCESS POPUP */
+        .success-popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(122, 91, 91, 0.85); z-index: 9999; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; }
+        .success-popup.active { display: flex; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .success-box { background-color: #ffffff; max-width: 420px; width: 100%; padding: 50px 35px; text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.15); border: 1px solid #d0d0d0; }
+        .success-icon { display: inline-flex; align-items: center; justify-content: center; width: 60px; height: 60px; border: 1px solid #999999; border-radius: 50%; font-size: 28px; color: #111111; margin-bottom: 25px; }
+        .success-box h2 { font-size: 18px; font-weight: 300; letter-spacing: 3px; color: #111111; text-transform: uppercase; margin: 0 0 20px 0; }
+        .success-divider { width: 30px; height: 1px; background: #cccccc; margin: 0 auto 20px; }
+        .success-box p { font-size: 13px; line-height: 1.9; color: #666666; margin: 0 0 30px; }
+        .success-btn { display: inline-block; padding: 12px 40px; background-color: #111111; color: #ffffff; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; border: none; cursor: pointer; transition: background-color 0.3s ease; font-family: inherit; }
+        .success-btn:hover { background-color: #333333; }
+
         @media (max-width: 600px) {
             .page-container { padding: 40px 20px; }
             .page-header h1 { font-size: 18px; }
@@ -61,7 +74,7 @@
 
         <div class="logo-top">
             <div class="logo-placeholder"><img src="vision-lead.png" alt="VISION & LEAD — Studio Mark"></div>
-            <div class="studio-tagline">The Studio</div>
+            <div class="studio-tagline">JOARMANAJ</div>
         </div>
 
         <div class="top-links">
@@ -124,12 +137,24 @@
 
         <div class="logo-bottom">
             <img src="vision-lead.png" alt="VISION & LEAD — Studio Mark">
-            <div class="studio-tagline">The Studio</div>
+            <div class="studio-tagline">JOARMANAJ</div>
         </div>
 
         <div class="footer">&copy; 2026 Studio &nbsp;&mdash;&nbsp; All Rights Reserved</div>
 
     </div>
+
+    <!-- SUCCESS POPUP -->
+    <div class="success-popup" id="success-popup">
+        <div class="success-box">
+            <div class="success-icon">&#10003;</div>
+            <h2>Thank You</h2>
+            <div class="success-divider"></div>
+            <p>You're on the list. When new works are released, you'll be among the first to know.</p>
+            <button type="button" class="success-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
     <script src="signup.js"></script>
 </body>
 </html>

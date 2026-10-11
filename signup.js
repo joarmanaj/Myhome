@@ -5,11 +5,9 @@
 (function() {
     'use strict';
 
-    // Environment variables injected by Netlify at build time
     const WHATSAPP_NUMBER = window.WHATSAPP_NUMBER || 'YOUR_WHATSAPP_NUMBER_PLACEHOLDER';
-    const RECAPTCHA_SITE_KEY ='6LcTyJAtAAAAAFxftog6vogy8NmDnu1U4dfcORsB';
+    const RECAPTCHA_SITE_KEY = '6LcTyJAtAAAAAFxftog6vogy8NmDnu1U4dfcORsB';
 
-    // Set reCAPTCHA site key if available
     const recaptchaWidget = document.getElementById('recaptcha-widget');
     if (recaptchaWidget && RECAPTCHA_SITE_KEY) {
         recaptchaWidget.setAttribute('data-sitekey', RECAPTCHA_SITE_KEY);
@@ -102,12 +100,16 @@
         formStatus.textContent = '';
     }
 
+    window.closePopup = function() {
+        document.getElementById('success-popup').classList.remove('active');
+    };
+
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         hideFormStatus();
 
         if (honeypot && honeypot.value) {
-            showFormStatus('Thank you. Your submission has been received.', 'success');
+            document.getElementById('success-popup').classList.add('active');
             form.reset();
             return;
         }
@@ -153,8 +155,6 @@
         submitBtn.disabled = true;
         submitBtn.textContent = 'Submitting...';
 
-        const formData = new FormData(form);
-
         fetch('https://signup-backend-hs67.onrender.com/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -169,9 +169,9 @@
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                showFormStatus('Thank you. You are on the list.', 'success');
                 form.reset();
                 if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
+                document.getElementById('success-popup').classList.add('active');
             } else {
                 showFormStatus(data.message || 'Something went wrong. Please try again.', 'error');
             }

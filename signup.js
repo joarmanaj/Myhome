@@ -155,7 +155,12 @@
         submitBtn.disabled = true;
         submitBtn.textContent = 'Submitting...';
 
-        fetch('https://signup-backend-hs67.onrender.com/signup', {
+        const API_BASE = window.location.hostname.includes('git-test-branch')
+            ? 'https://signup-backend-staging.onrender.com'
+            : 'https://signup-backend-hs67.onrender.com';
+
+
+        fetch(`${API_BASE}/signup`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

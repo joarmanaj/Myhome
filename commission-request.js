@@ -3,10 +3,15 @@
 (function() {
     'use strict';
 
-    const API_URL = (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost')
-        ? 'http://127.0.0.1:5000/commission'
-        : 'https://signup-backend-hs67.onrender.com/commission';
-
+    let API_URL;
+    if (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') {
+        API_URL = 'http://127.0.0.1:5000/commission';
+    } else if (window.location.hostname.includes('git-test-branch')) {
+        API_URL = 'https://signup-backend-staging.onrender.com/commission';
+    } else {
+        API_URL = 'https://signup-backend-hs67.onrender.com/commission';
+    }
+    
     const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello, I'd like to discuss a commission before filling the form.")}`;
 
     const state = {
